@@ -15,6 +15,20 @@ def splitAudio(props):
   input = AudioSegment.from_file(source)
   totalLen = len(input)
 
+  ext = os.path.splitext(source)[1].lower()
+  if ext in (".mp3"):
+    exportFormat = "mp3"
+    exportExt = "mp3"
+    exportParams = []
+  elif ext == ".m4a":
+    exportFormat = "ipod"
+    exportExt = "m4a"
+    exportParams = []
+  else:
+    exportFormat = "flac"
+    exportExt = "flac"
+    exportParams = ["-compression_level", "5"]
+
   with open(config, "r") as configFile:
     data = json.load(configFile)
 
@@ -23,7 +37,7 @@ def splitAudio(props):
   albumName = data["albumName"]
   albumDate = data["albumYear"]
 
-  os.makedirs(outputFolder, exist_ok = True)
+  os.makedirs(outputFolder, exist_ok=True)
 
   for index, item in enumerate(tracklist):
 
@@ -35,13 +49,16 @@ def splitAudio(props):
     start = msTime(item["start"])
 
     segment = input[start:end]
-    segment = segment.set_frame_rate(44100).set_sample_width(2).set_channels(2)
+
+    if exportFormat == "flac":
+      segment = segment.set_frame_rate(44100).set_sample_width(2).set_channels(2)
 
     try:
+      outPath = f"{outputFolder}/{str(index + 1).zfill(2)}. {item['name']}.{exportExt}"
       segment.export(
-        f"{outputFolder}/{str(index + 1)}. {item["name"]}.flac",
-        format="flac",
-        parameters=["-compression_level", "5"],
+        outPath,
+        format=exportFormat,
+        parameters=exportParams,
         tags={
           "title": item["name"],
           "artist": artistName,
@@ -51,8 +68,6 @@ def splitAudio(props):
           "genre": ""
         }
       )
-      message = f"{outputFolder}/{str(index + 1)}. {item["name"]}.flac done\n"
+      print(f"{outPath} done\n")
     except Exception as err:
-      message = err
-
-    print(message)
+      print(f"Error on track {index + 1}: {err}\n")
