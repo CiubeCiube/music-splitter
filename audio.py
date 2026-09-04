@@ -6,6 +6,9 @@ from helpers import msTime
 from files import outputFolder
 
 def splitAudio(props):
+
+  print("\n")
+
   source = props["source"]
   config = props["config"]
 
@@ -48,7 +51,7 @@ def splitAudio(props):
           "genre": ""
         }
       )
-      message = f"\n{outputFolder}/{str(index + 1)}. {item["name"]}.flac done\n"
+      message = f"{outputFolder}/{str(index + 1)}. {item["name"]}.flac done\n"
     except Exception as err:
       message = err
 
