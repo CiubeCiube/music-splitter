@@ -8,7 +8,6 @@ A CLI utility to split a single audio file into individual tracks using a JSON t
 | Required Packages |
 |---|
 | pydub |
-| mutagen |
 
 | System Dependencies |
 |---|
@@ -42,7 +41,6 @@ python main.py
 |---|---|
 | 1 | Enter tracks data interactively and populate `tracklist.json` |
 | 2 | Preview tracklist and split the audio file |
-| 0 | Exit |
 
 ---
 
@@ -58,9 +56,9 @@ When entering tracks, paste each track on its own line using this format:
 Example:
 
 ```
-[0:01] Mythologies
-[3:16] One More Time
-[1:01:00] Turn On The Lights again..
+[0:01] Afterthought
+[3:16] Digital Love
+[1:01:00] Milano Centro
 ```
 
 Press Enter twice when done.
