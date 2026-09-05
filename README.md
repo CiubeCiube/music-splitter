@@ -8,6 +8,7 @@ A CLI utility to split a single audio file into individual tracks using a JSON t
 | Required Packages |
 |---|
 | pydub |
+| pytubefix |
 
 | System Dependencies |
 |---|
@@ -39,8 +40,9 @@ python main.py
 
 | Option | Description |
 |---|---|
-| 1 | Enter tracks data interactively and populate `tracklist.json` |
-| 2 | Preview tracklist and split the audio file |
+| 1 | Preview tracklist and split the audio file |
+| 2 | Enter tracks data interactively and populate `tracklist.json` |
+| 3 | Download the audio file from a Youtube video |
 
 ---
 
