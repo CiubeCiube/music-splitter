@@ -16,7 +16,7 @@ def splitAudio(props):
   totalLen = len(input)
 
   ext = os.path.splitext(source)[1].lower()
-  if ext in (".mp3"):
+  if ext == ".mp3":
     exportFormat = "mp3"
     exportExt = "mp3"
     exportParams = []
@@ -28,6 +28,13 @@ def splitAudio(props):
     exportFormat = "flac"
     exportExt = "flac"
     exportParams = ["-compression_level", "5"]
+
+  if exportFormat == "flac":
+    trackKey = "tracknumber"
+    albumArtistKey = "albumartist"
+  else:
+    trackKey = "track"
+    albumArtistKey = "album_artist"
 
   with open(config, "r") as configFile:
     data = json.load(configFile)
@@ -62,8 +69,9 @@ def splitAudio(props):
         tags={
           "title": item["name"],
           "artist": artistName,
+          albumArtistKey: artistName,
           "album": albumName,
-          "tracknumber": str(index + 1),
+          trackKey: str(index + 1),
           "date": albumDate,
           "genre": ""
         }
