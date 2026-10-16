@@ -28,7 +28,8 @@ def populateConfig():
 
   tracks = []
   for line in lines:
-    match = re.match(r"^\[(\d+(?::\d+)+)\]\s+(.+)$", line.strip())
+    # match = re.match(r"^\[(\d+(?::\d+)+)\]\s+(.+)$", line.strip())
+    match = re.match(r"^(\d+(?:[.:]\d+)+)\s+(.+)$", line.strip())
     if match:
       timestamp = match.group(1)
       name = match.group(2).strip()

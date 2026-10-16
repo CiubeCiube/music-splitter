@@ -51,16 +51,16 @@ python main.py
 When entering tracks, paste each track on its own line using this format:
 
 ```
-[mm:ss] Track Name
-[h:mm:ss] Track Name
+mm:ss Track Name
+h:mm:ss Track Name
 ```
 
 Example:
 
 ```
-[0:01] Afterthought
-[3:16] Digital Love
-[1:01:00] Milano Centro
+0:01 Afterthought
+3:16 Digital Love
+1:01:00 Milano Centro
 ```
 
 Press Enter twice when done.
