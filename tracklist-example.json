@@ -1,0 +1,55 @@
+{
+  "artistName": "Tame Impala",
+  "albumName": "The Lot Radio",
+  "albumYear": "2025",
+  "tracks": [
+    {
+      "name": "Au pays des merveilles de Juliet (Moodo\u00efd song)",
+      "start": "0:00"
+    },
+    {
+      "name": "Contrasts (Laksa song)",
+      "start": "3:40"
+    },
+    {
+      "name": "Oasis (Petar Dundov song)",
+      "start": "8:20"
+    },
+    {
+      "name": "Star Guitar (The Chemical Brothers song)",
+      "start": "13:40"
+    },
+    {
+      "name": "It Feels So Good (Sonique song)",
+      "start": "18:13"
+    },
+    {
+      "name": "Let It Happen",
+      "start": "22:50"
+    },
+    {
+      "name": "Love Stimulation (Humate song)",
+      "start": "27:18"
+    },
+    {
+      "name": "Pan Jabi (Wade song)",
+      "start": "30:58"
+    },
+    {
+      "name": "End of Summer",
+      "start": "33:53"
+    },
+    {
+      "name": "Halcyon And On And On (Orbital song)",
+      "start": "40:00"
+    },
+    {
+      "name": "Dream Pop (Earth Trax song)",
+      "start": "45:20"
+    },
+    {
+      "name": "Neverender (Justice song)",
+      "start": "48:10"
+    }
+  ]
+}
